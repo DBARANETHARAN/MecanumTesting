@@ -20,7 +20,9 @@ public class DriveCmd extends CommandBase {
 
   @Override
   public void execute() {
-    mecanumDrivetrain.drive(-driverJoystick.getY(), -driverJoystick.getX(), -driverJoystick.getZ());
+    double turnVal = ( Math.abs(driverJoystick.getX()) > 0.1) ? -driverJoystick.getX() : 0;
+    double rotVal = ( Math.abs(driverJoystick.getZ()) > 0.2) ? -driverJoystick.getZ() : 0;
+    mecanumDrivetrain.drive(driverJoystick.getY(), turnVal, rotVal);
   }
 
   @Override

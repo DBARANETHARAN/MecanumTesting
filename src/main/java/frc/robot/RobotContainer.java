@@ -1,6 +1,5 @@
 package frc.robot;
 
-import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.DriveCmd;
 import frc.robot.subsystems.Drivetrain;
@@ -11,7 +10,7 @@ public class RobotContainer {
   private final Drivetrain mecanumDrivetrain = new Drivetrain();
 
   private final Joystick driverJoystick =
-      new Joystick(OperatorConstants.driverJoystickPort);
+      new Joystick(2);
 
   public RobotContainer() {
     mecanumDrivetrain.setDefaultCommand(new DriveCmd(mecanumDrivetrain, driverJoystick));
